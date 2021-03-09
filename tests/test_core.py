@@ -1,4 +1,5 @@
 import unittest
+
 from trusted_email_validator.trusted_email_validator import TrustedEmailValidator
 
 
@@ -32,7 +33,7 @@ class BasicClientIntegrationTests(unittest.TestCase):
     def test_should_return_invalid_when_domain_not_valid(self):
         self.assertFalse(TrustedEmailValidator.is_valid('testing@dom[]ain.com'))
 
-    @skip('Fails on Travis, works on Windows')
+    @unittest.skip('Fails on Travis, works on Windows')
     def test_should_return_invalid_when_email_has_no_mx(self):
         self.assertFalse(TrustedEmailValidator.is_valid('testing@example.com'))
 
@@ -64,5 +65,3 @@ class BasicClientIntegrationTests(unittest.TestCase):
 
     def test_should_not_do_mx_when_email_is_common_domain_and_mx_not_wanted(self):
         pass
-
-
