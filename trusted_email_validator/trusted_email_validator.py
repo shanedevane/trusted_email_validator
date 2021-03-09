@@ -39,8 +39,8 @@ class TrustedEmailValidator(object):
     _COMMON_USERNAMES_MEMORY = list()
     _cache_load = 0
     _directory = os.path.dirname(__file__)
-    _data_file_free_providers = os.path.join(_directory, './data/email_providers_free.txt')
-    _data_file_common_usernames = os.path.join(_directory, './data/username_common_groups.txt')
+    _data_file_free_providers = os.path.join(_directory, 'data', 'email_providers_free.txt')
+    _data_file_common_usernames = os.path.join(_directory, 'data', 'username_common_groups.txt')
 
     def _init_trust_rules(self):
         for rule in rules.TRUST_RULES:
