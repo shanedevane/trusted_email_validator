@@ -100,7 +100,9 @@ class TrustedEmailValidator(object):
     def _load_free_providers(cls):
         if not cls._FREE_PROVIDERS_MEMORY:
             cls._cache_load += 1
-            return [host.rstrip() for host in open(cls._data_file_free_providers) if not host.startswith('#')]
+            with open(cls._data_file_free_providers) as file:
+                hostnames = file.readlines()
+            return [host.rstrip() for host in hostnames if not host.startswith('#')]
         else:
             return cls._FREE_PROVIDERS_MEMORY
 
@@ -108,7 +110,9 @@ class TrustedEmailValidator(object):
     def _load_common_user_names(cls):
         if not cls._COMMON_USERNAMES_MEMORY:
             cls._cache_load += 1
-            return [username.rstrip() for username in open(cls._data_file_common_usernames) if not username.startswith('#')]
+            with open(cls._data_file_common_usernames) as file:
+                hostnames = file.readlines()
+            return [username.rstrip() for username in hostnames if not username.startswith('#')]
         else:
             return cls._COMMON_USERNAMES_MEMORY
 
