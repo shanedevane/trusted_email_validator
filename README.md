@@ -15,7 +15,7 @@ To be able to change a program workflow based on how 'trustworthy' and email add
 Possible use cases:
 - Deciding if further email or sms validation is required to validate an email address
 - Deciding if manual intervention is required for accepting an application/order coming from an email address
-- Deciding if the email address is an organisation vs. a free email provider
+- Deciding if the email address is an organisation vs. a free email provider 
    
 # Usage
 
@@ -61,7 +61,14 @@ unreliable metric as many mail servers by default do not respond to it. ie. Exch
 
 # Install
 
+```bash
 python setup.py install
+```
+
+# Run Tests
+```bash
+pytest
+```
 
 
 ## References
