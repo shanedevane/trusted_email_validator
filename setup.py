@@ -10,7 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 #be pyemailvalidator
 
 setup(
-    name='trusted_email_validator',
+    name='trusted-email-validator',
     version=__version__,
     packages=['trusted_email_validator'],
     author='Shane Devane',
